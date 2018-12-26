@@ -4,18 +4,13 @@ import time
 
 
 
-def execute():
-    
+def execute_command():
 
     cmd = commands.get()
     exec(cmd)
 
 
-if __name__ == "__main__":
-
-    for i in range(10):
-        time.sleep(5)
-        execute()
-
-
+def execute():
+    while True:
+        execute_command()
 
