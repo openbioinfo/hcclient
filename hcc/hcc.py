@@ -1,5 +1,4 @@
 
-
 from execute import execute 
 from load import load
 from threading import Thread
@@ -15,7 +14,7 @@ signal.signal(signal.SIGINT, myHandler)
 
 def main(ip,port):
 
-    t1 = Thread(target=load,args=(ip,port),)
+    t1 = Thread(target=load,args=(ip,port))
     t2 = Thread(target=execute,args=())
     t1.setDaemon(True)
     t2.setDaemon(True)
