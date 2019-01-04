@@ -14,12 +14,12 @@ def load_command(ip,port=5001):
     url = "http://%s:%s/commands/" % (ip,port)
     try:
         req = requests.get(url)
-        code = req.status_code
         rd = json.loads(req.text)
         command = rd["content"]
-        commands.post(command)
-    except:
-        print "service is off ..."
+        if command:
+            commands.post(command)
+    except Exception,e:
+        print e
 
 
 def load(ip,port):
@@ -28,5 +28,5 @@ def load(ip,port):
         load_command(ip)
 
 
-
-
+if __name__ == "__main__":
+    load("127.0.0.1",5001)

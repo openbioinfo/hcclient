@@ -9,8 +9,10 @@ class commands():
     @staticmethod
     def post(command):
         command_list = []
-        if os.path.exists(db):
+        try:
             command_list = json.loads(open(db).read())
+        except Exception,err:
+            print err
         command_list.append(command)
         fp = open(db,"w")
         fp.write(json.dumps(command_list))
@@ -19,8 +21,10 @@ class commands():
     @staticmethod
     def get():
         command_list = []
-        if os.path.exists(db):
+        try:
             command_list = json.loads(open(db).read()) 
+        except Exception,err:
+            print err
         cmd = ""
         if command_list :
             cmd = command_list[0] 
