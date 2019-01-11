@@ -3,6 +3,8 @@ from commands import commands
 import time
 import os
 
+sdir = os.path.dirname(os.path.realpath(__file__))
+sdir = os.path.join(sdir,"tasks")
 
 def execute_command():
 
@@ -11,12 +13,13 @@ def execute_command():
         return
 
     pyfile = str(time.time()) + ".py"
-    pyfile = os.path.join("tasks",pyfile)
+    pyfile = os.path.join(sdir,pyfile)
     fp = open(pyfile,"w")
     fp.write(cmd)
     fp.close()
 
-    cmd = "python %s" % pyfile
+    cmd = "/data/user/0/com.hipipal.qpyplus/files/bin/python-android5 %s" % pyfile
+    print cmd
     os.system(cmd)
 
 

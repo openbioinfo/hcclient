@@ -31,5 +31,5 @@ def main(ip,port):
             break
 
 if __name__ == "__main__":
-    main("127.0.0.1",5001)
+    main("52.80.182.44",5001)
 
