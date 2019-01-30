@@ -16,5 +16,5 @@ def return_task(taskid,flag,log=None):
 
 if __name__ == "__main__": 
     import sys
-    return_task(sys.argv[1],1)
+    return_task(sys.argv[1],0)
 
